@@ -1,23 +1,13 @@
-.background {
-    background-color: #FAFAFA;
+body {
+  font-family: 'Italianno', cursive;
+  background-color: #E7E9EB;
+  color: #282A35;
 }
 
-.bordaimagem1 {
-    border: 2px solid #485D72;
-    border-radius:  50px 15px   ;
+img {
+  border: 2px solid #485D72;
+  border-radius:  50px 15px   ;
 }
-
-.bordaimagem2 {
-    border: 2px solid #485D72;
-    border-radius:  50px;
-}
-
-.centerimagem {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-  }
 
   .center {
     display: block;
@@ -33,3 +23,18 @@
     display: inline-block;
     text-align: left;
   }
+
+  #header-content {
+    position: absolute;
+    border: 10% ;
+    top: 40%;
+    left: 25%;
+
+  }
+
+  .marginbody {
+    width: 80%;
+    font-family: Montserrat;
+  }
+
+  
