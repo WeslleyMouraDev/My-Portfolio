@@ -10,8 +10,19 @@ img {
 }
 
 nav ul li a {
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+  font-size: 16px;
   color: white;
   background-color: #282A35;
+  padding: 5px 10px;
+  transition: all 300ms ease;
+}
+
+nav ul li a:hover {
+  font-size: 36px;
+  color: #9BF8FD;
 }
 
   .container {
