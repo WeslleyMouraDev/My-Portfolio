@@ -7,7 +7,7 @@ import { useTheme } from "next-themes"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
 import { IoMdMenu, IoMdClose } from "react-icons/io"
 import Image from 'next/image'
-import navLogo from '../public/navLogo.png'
+import navLogo from '../public/navLogo.svg'
 
 interface NavItem {
     label: string
