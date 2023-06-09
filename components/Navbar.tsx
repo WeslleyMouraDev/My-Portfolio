@@ -16,15 +16,15 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Inicio",
-    page: "inicio",
+    page: "home",
   },
   {
     label: "Sobre",
-    page: "sobre",
+    page: "about",
   },
   {
     label: "Projetos",
-    page: "projetos",
+    page: "projects",
   },
 ];
 
@@ -32,7 +32,7 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [navbar, setNavbar] = useState(false);
 
-  const currentTheme = theme || "light"; // Defina o tema padrão aqui
+  const currentTheme = theme || "light";
 
   return (
     <header
@@ -45,9 +45,11 @@ const Navbar = () => {
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3">
-            <div className="md:py-5 md:block">
-              <Image src={navLogo} alt="/" width={80} />
-            </div>
+            <Link to="home">
+              <div className="container flex items-center space-x-2 cursor-pointer">
+                <Image src={navLogo} alt="/" width={80} />
+              </div>
+            </Link>
             <div className="md:hidden">
               <button onClick={() => setNavbar(!navbar)}>
                 {navbar ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
@@ -68,9 +70,11 @@ const Navbar = () => {
                   <Link
                     key={idx}
                     to={item.page}
-                    className={
-                      `block lg:inline-block ${currentTheme === "dark" ? "text-white" : "text-neutral-900"} hover:text-neutral-500`
-                    }
+                    className={`block lg:inline-block ${
+                      currentTheme === "dark"
+                        ? "text-white"
+                        : "text-neutral-900"
+                    } hover:text-neutral-500 cursor-pointer`}
                     activeClass="active"
                     spy={true}
                     smooth={true}
@@ -80,7 +84,7 @@ const Navbar = () => {
                   >
                     {item.label}
                   </Link>
-                )
+                );
               })}
 
               {currentTheme === "dark" ? (

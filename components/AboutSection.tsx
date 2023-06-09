@@ -2,19 +2,19 @@ import React from "react";
 import Image from "next/image";
 
 const skills = [
-    { skill: "HTML" },
-    { skill: "CSS" },
-    { skill: "JavaScript" },
-    { skill: "TypeScript" },
-    { skill: "Python" },
-    { skill: "Docker" },
-    { skill: "Node.js" },
-    { skill: "React" },
-    { skill: "Next.js" },
-    { skill: "Tailwind CSS" },
-    { skill: "Git" },
-    { skill: "GitHub" },
-    { skill: "MySQL" },
+  { skill: "HTML" },
+  { skill: "CSS" },
+  { skill: "JavaScript" },
+  { skill: "TypeScript" },
+  { skill: "Python" },
+  { skill: "Docker" },
+  { skill: "Node.js" },
+  { skill: "React" },
+  { skill: "Next.js" },
+  { skill: "Tailwind CSS" },
+  { skill: "Git" },
+  { skill: "GitHub" },
+  { skill: "MySQL" },
 ];
 
 const AboutSection = () => {
@@ -29,7 +29,7 @@ const AboutSection = () => {
         <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
           <div className="md:w-1/2 ">
             <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
-              Me conheça!
+              Aprenda sobre mim!
             </h1>
             <p>
               Olá, meu nome é Weslley Moura e eu sou um Desenvolvedor Fullstack{" "}
@@ -59,9 +59,9 @@ const AboutSection = () => {
               </span>{" "}
               e é isso que eu me esforço para fazer. Tenho uma paixão diferente
               pela tecnologia e estou sempre quebrando meus limites para
-              acompanhar cada passo desse mercado. Fico muito
-              entusiasmado para saber onde minha carreira vai me levar e estou
-              sempre aberto a novas oportunidades. 🙂
+              acompanhar cada passo desse mercado. Fico muito entusiasmado para
+              saber onde minha carreira vai me levar e estou sempre aberto a
+              novas oportunidades. 🙂
             </p>
           </div>
           <div className="text-center md:w-1/2 md:text-left">
@@ -79,7 +79,7 @@ const AboutSection = () => {
               })}
             </div>
             <Image
-              src="/hero-image2.png"
+              src="/about-image.png"
               alt=""
               width={325}
               height={325}

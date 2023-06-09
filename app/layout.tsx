@@ -7,6 +7,11 @@ import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// export const metadata = {
+//   title: 'Weslley Moura - Fullstack Developer',
+//   description: 'Fullstack Developer',
+// }
+
 const currentTheme = "light";
 
 export default function RootLayout({
