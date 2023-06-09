@@ -1,16 +1,14 @@
 import React from "react"
+import { useTheme } from "next-themes";
 import {
   AiOutlineGithub,
-  AiOutlineTwitter,
-  AiOutlineLinkedin,
-  AiOutlineYoutube,
+  AiOutlineLinkedin
 } from "react-icons/ai"
 
-interface FooterProps {
-    currentTheme: string;
-  }
-  
-const Footer: React.FC<FooterProps> = ({ currentTheme }) => {
+
+const Footer = () => {
+  const { theme: currentTheme } = useTheme();
+
   const isDarkTheme = currentTheme === "dark";
 
   return (

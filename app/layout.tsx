@@ -7,12 +7,10 @@ import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// export const metadata = {
-//   title: 'Weslley Moura - Fullstack Developer',
-//   description: 'Fullstack Developer',
-// }
-
-const currentTheme = "light";
+export const metadata = {
+  title: 'Weslley Moura - Fullstack Developer',
+  description: 'Fullstack Developer',
+}
 
 export default function RootLayout({
   children,
@@ -22,10 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider enableSystem={true} attribute='class'>
+        <ThemeProvider defaultTheme="light" enableSystem={true} attribute='class'>
           <Navbar />
           {children}
-          <Footer currentTheme={currentTheme} />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

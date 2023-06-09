@@ -1,23 +1,30 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { SiNextdotjs, SiTailwindcss, SiGithub, SiGit, SiNodedotjs, SiReact, SiDocker, SiPython, SiTypescript, SiJavascript, SiCss3, SiHtml5 } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 
 const skills = [
-  { skill: "HTML" },
-  { skill: "CSS" },
-  { skill: "JavaScript" },
-  { skill: "TypeScript" },
-  { skill: "Python" },
-  { skill: "Docker" },
-  { skill: "Node.js" },
-  { skill: "React" },
-  { skill: "Next.js" },
-  { skill: "Tailwind CSS" },
-  { skill: "Git" },
-  { skill: "GitHub" },
-  { skill: "MySQL" },
+  { skill: "HTML", icon: SiHtml5 },
+  { skill: "CSS", icon: SiCss3 },
+  { skill: "JavaScript", icon: SiJavascript },
+  { skill: "TypeScript", icon: SiTypescript },
+  { skill: "Python", icon: SiPython },
+  { skill: "Docker", icon: SiDocker },
+  { skill: "Node.js", icon: SiNodedotjs },
+  { skill: "React", icon: SiReact },
+  { skill: "Next.js", icon: SiNextdotjs },
+  { skill: "Tailwind CSS", icon: SiTailwindcss },
+  { skill: "Git", icon: SiGit },
+  { skill: "GitHub", icon: SiGithub },
+  { skill: "MySQL", icon: GrMysql },
 ];
 
 const AboutSection = () => {
+  const { theme: currentTheme } = useTheme();
+  const isDarkTheme = currentTheme === "dark";
+
   return (
     <section id="about">
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
@@ -68,22 +75,24 @@ const AboutSection = () => {
             <h1 className="text-2xl font-bold mb-6">Habilidades</h1>
             <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start">
               {skills.map((item, idx) => {
+                const Icon = item.icon; // Component for the icon
                 return (
-                  <p
+                  <div
                     key={idx}
-                    className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
+                    className="flex items-center bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
                   >
-                    {item.skill}
-                  </p>
+                    <Icon className="mr-2" /> {/* Render the icon */}
+                    <p>{item.skill}</p> {/* Render the skill name */}
+                  </div>
                 );
               })}
             </div>
             <Image
-              src="/about-image.png"
+              src={isDarkTheme ? "/skills-dark.svg" : "/skills-light.svg"}
               alt=""
-              width={325}
-              height={325}
-              className="hidden md:block md:relative md:bottom-4 md:top-5 md:left-5 md:z-0"
+              width={200}
+              height={200}
+              className="hidden text-white md:block md:relative md:bottom-4 md:top-5 md:left-20 md:z-0"
             />
           </div>
         </div>
