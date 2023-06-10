@@ -6,13 +6,20 @@ import { Link } from "react-scroll/modules";
 import { HiArrowDown } from "react-icons/hi";
 import { BsFiletypePdf, BsArrowDownRight } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { Lato } from "next/font/google"
+
+const lato = Lato({ 
+  weight: '400',
+  subsets: ["latin"]
+});
 
 const HeroSection = () => {
   const { theme: currentTheme } = useTheme();
+  const isDarkTheme = currentTheme === "dark";
 
   return (
-    <section id="home">
-      <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-30 md:py-32 md:flex-row md:space-x-4 md:text-left">
+    <section id="home" style={lato.style}>
+      <div className="flex flex-col items-center justify-center text-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-30 md:py-32 md:flex-row md:space-x-4 md:text-left">
         <div className="md:mt-2 md:w-1/2">
           <Image
             src="/avatar.png"
@@ -50,11 +57,13 @@ const HeroSection = () => {
 
             <button
               className={`flex items-center hover:bg-gray-300 ${
-                currentTheme === "dark" ? "text-white" : "text-gray-800"
+                isDarkTheme ? "text-white" : "text-gray-800"
               } hover:text-gray-900 py-2 px-4 rounded border border-gray-300 shadow`}
             >
               <span className="mr-2">Currículo</span>
-              <BsFiletypePdf />
+              <BsFiletypePdf
+                className={`${isDarkTheme ? "text-white" : "text-neutral-500"}`}
+              />
             </button>
             <a
               href="https://github.com/WeslleyMouraDev"
@@ -62,9 +71,9 @@ const HeroSection = () => {
               target="_blank"
             >
               <AiFillGithub
-                className={
-                  "hover:-translate-y-1 transition-transform cursor-pointer text-white dark:text-neutral-500"
-                }
+                className={`hover:-translate-y-1 transition-transform cursor-pointer ${
+                  isDarkTheme ? "text-white" : "text-neutral-500"
+                }`}
                 size={30}
               />
             </a>
@@ -75,9 +84,9 @@ const HeroSection = () => {
               target="_blank"
             >
               <AiFillLinkedin
-                className={
-                  "hover:-translate-y-1 transition-transform cursor-pointer text-white dark:text-neutral-500"
-                }
+                className={`hover:-translate-y-1 transition-transform cursor-pointer ${
+                  isDarkTheme ? "text-white" : "text-neutral-500"
+                }`}
                 size={30}
               />
             </a>

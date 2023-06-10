@@ -3,6 +3,12 @@ import Image from "next/image"
 import Link from "next/link"
 import SlideUp from "./SlideUp"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
+import { Lato } from "next/font/google"
+
+const lato = Lato({ 
+  weight: '400',
+  subsets: ["latin"]
+});
 
 const projects = [
   {
@@ -32,7 +38,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects">
+    <section id="projects" style={lato.style}>
       <h1 className="my-10 text-center font-bold text-4xl">
         Projetos
         <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
