@@ -4,6 +4,12 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { SiNextdotjs, SiTailwindcss, SiGithub, SiGit, SiNodedotjs, SiReact, SiDocker, SiPython, SiTypescript, SiJavascript, SiCss3, SiHtml5 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
+import { Lato } from "next/font/google"
+
+const lato = Lato({ 
+  weight: '400',
+  subsets: ["latin"]
+});
 
 const skills = [
   { skill: "HTML", icon: SiHtml5 },
@@ -26,7 +32,7 @@ const AboutSection = () => {
   const isDarkTheme = currentTheme === "dark";
 
   return (
-    <section id="about">
+    <section id="about" style={lato.style}>
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
         <h1 className="text-center font-bold text-4xl">
           Sobre mim

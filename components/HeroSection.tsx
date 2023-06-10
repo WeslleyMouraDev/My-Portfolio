@@ -6,13 +6,19 @@ import { Link } from "react-scroll/modules";
 import { HiArrowDown } from "react-icons/hi";
 import { BsFiletypePdf, BsArrowDownRight } from "react-icons/bs";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { Lato } from "next/font/google"
+
+const lato = Lato({ 
+  weight: '400',
+  subsets: ["latin"]
+});
 
 const HeroSection = () => {
   const { theme: currentTheme } = useTheme();
   const isDarkTheme = currentTheme === "dark";
 
   return (
-    <section id="home">
+    <section id="home" style={lato.style}>
       <div className="flex flex-col items-center justify-center text-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-30 md:py-32 md:flex-row md:space-x-4 md:text-left">
         <div className="md:mt-2 md:w-1/2">
           <Image

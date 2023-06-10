@@ -1,12 +1,17 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-scroll/modules";
-import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { BsMoonStarsFill, BsSun } from "react-icons/bs";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Image from "next/image";
 import navLogo from "../public/navLogo.svg";
+import { Lato } from "next/font/google"
+
+const lato = Lato({ 
+  weight: '400',
+  subsets: ["latin"]
+});
 
 interface NavItem {
   label: string;
@@ -35,14 +40,14 @@ const Navbar = () => {
   const currentTheme = theme || "light";
 
   return (
-    <header
-      className={`w-full mx-auto px-4 sm:px-20 fixed top-0 z-50 shadow bg-white ${
+    <header style={lato.style}
+      className={`w-full rounded-md mx-auto px-4 sm:px-20 fixed top-0 z-50 shadow bg-white backdrop-blur-lg bg-opacity-30 ${
         currentTheme === "dark"
-          ? "dark:bg-stone-900 dark:border-b dark:border-stone-600"
+          ? "dark:bg-stone-900 dark:backdrop-blur-lg dark:bg-opacity-30 dark:border-b dark:border-stone-600"
           : ""
       }`}
     >
-      <div className="justify-between md:items-center md:flex">
+      <div className="justify-between md:items-center md:flex bg">
         <div>
           <div className="flex items-center justify-between py-3">
             <Link to="home">

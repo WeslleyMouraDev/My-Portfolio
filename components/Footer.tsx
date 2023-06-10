@@ -4,7 +4,12 @@ import {
   AiOutlineGithub,
   AiOutlineLinkedin
 } from "react-icons/ai"
+import { Lato } from "next/font/google"
 
+const lato = Lato({ 
+  weight: '400',
+  subsets: ["latin"]
+});
 
 const Footer = () => {
   const { theme: currentTheme } = useTheme();
@@ -12,7 +17,7 @@ const Footer = () => {
   const isDarkTheme = currentTheme === "dark";
 
   return (
-    <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
+    <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl" style={lato.style}>
       <hr className="w-full h-0.5 mx-auto mt-8 bg-neutral-200 border-0"></hr>
       <div className="mx-auto p-4 flex flex-col text-center md:flex-row md:justify-between">
         <div className={`flex flex-row items-center justify-center space-x-1 ${isDarkTheme ? "text-white" : "text-neutral-500"}`}>
