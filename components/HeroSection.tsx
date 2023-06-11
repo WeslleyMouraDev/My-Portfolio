@@ -1,21 +1,31 @@
 "use client"; // this is a client component
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Link } from "react-scroll/modules";
 import { HiArrowDown } from "react-icons/hi";
 import { BsFiletypePdf, BsArrowDownRight } from "react-icons/bs";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { Lato } from "next/font/google"
+import { AiFillCheckCircle, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { Lato } from "next/font/google";
 
-const lato = Lato({ 
-  weight: '400',
-  subsets: ["latin"]
+const lato = Lato({
+  weight: "400",
+  subsets: ["latin"],
 });
 
 const HeroSection = () => {
   const { theme: currentTheme } = useTheme();
+  const [mostrarPopup, setMostrarPopup] = useState(false);
   const isDarkTheme = currentTheme === "dark";
+
+  const handleDownload = () => {
+    setMostrarPopup(true);
+
+    // Define um timeout para esconder o pop-up depois de 3 segundos
+    setTimeout(() => {
+      setMostrarPopup(false);
+    }, 3000);
+  };
 
   return (
     <section id="home" style={lato.style}>
@@ -55,16 +65,32 @@ const HeroSection = () => {
               <BsArrowDownRight />
             </Link>
 
-            <button
-              className={`flex items-center hover:bg-gray-300 ${
-                isDarkTheme ? "text-white" : "text-gray-800"
-              } hover:text-gray-900 py-2 px-4 rounded border border-gray-300 shadow`}
-            >
-              <span className="mr-2">Currículo</span>
-              <BsFiletypePdf
-                className={`${isDarkTheme ? "text-white" : "text-neutral-500"}`}
-              />
-            </button>
+            <div>
+              {mostrarPopup && (
+                <div className="fixed inset-0 flex items-center justify-center z-10">
+                  <div className="flex items-center bg-white backdrop-blur-lg bg-opacity-80 rounded-lg p-4 shadow">
+                    <p className="pr-2">Download do currículo iniciado!</p>
+                    <AiFillCheckCircle 
+                    className="text-green-500 w-5 h-5"
+                    />
+                  </div>
+                </div>
+              )}
+              <a
+                href="https://github.com/WeslleyMouraDev/My-Portfolio/raw/main/public/resume/Weslley%20Moura%20-%20Curriculo%20Developer.pdf"
+                onClick={handleDownload}
+                className={`flex items-center hover:bg-gray-300 ${
+                  isDarkTheme ? "text-white" : "text-gray-800"
+                } hover:text-gray-900 py-2 px-4 rounded border border-gray-300 shadow`}
+              >
+                <span className="mr-2">Currículo</span>
+                <BsFiletypePdf
+                  className={`${
+                    isDarkTheme ? "text-white" : "text-neutral-500"
+                  }`}
+                />
+              </a>
+            </div>
             <a
               href="https://github.com/WeslleyMouraDev"
               rel="noreferrer"
