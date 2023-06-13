@@ -17,22 +17,22 @@ const projects = [
       'Uma solução prática para organizar suas tarefas diárias. Aplicação Fullstack utilizando as tecnologias: React, Next.js, Tailwind, Headless UI, React DnD, Typescript, Zusland, Appwrite.',
     image: '/w-task.png',
     github: 'https://github.com/WeslleyMouraDev/w-task',
-    link: '#',
+    link: 'https://wtask.vercel.app',
   },
-  {
-    name: 'Projeto 02',
-    description: 'Descrição do projeto.',
-    image: '/web.png',
-    github: '#',
-    link: '#',
-  },
-  {
-    name: 'Projeto 03',
-    description: 'Descrição do projeto.',
-    image: '/web.png',
-    github: '#',
-    link: '#',
-  },
+  // {
+  //   name: 'Projeto 02',
+  //   description: 'Descrição do projeto.',
+  //   image: '/web.png',
+  //   github: '#',
+  //   link: '#',
+  // },
+  // {
+  //   name: 'Projeto 03',
+  //   description: 'Descrição do projeto.',
+  //   image: '/web.png',
+  //   github: '#',
+  //   link: '#',
+  // },
 ];
 
 const ProjectsSection = () => {
@@ -50,10 +50,10 @@ const ProjectsSection = () => {
               <SlideUp offset="-300px 0px -300px 0px">
                 <div className="flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
                   <div className=" md:w-1/2">
-                    <Link href={project.link}>
+                    <Link href={project.link} target="_blank">
                       <Image
                         src={project.image}
-                        alt=""
+                        alt="project-image"
                         width={1000}
                         height={1000}
                         className="rounded-xl shadow-xl hover:opacity-70"
