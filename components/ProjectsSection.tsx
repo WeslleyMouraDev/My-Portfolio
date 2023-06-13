@@ -1,40 +1,39 @@
-import React from "react"
-import Image from "next/image"
-import Link from "next/link"
-import SlideUp from "./SlideUp"
-import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
-import { Lato } from "next/font/google"
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import SlideUp from './SlideUp';
+import { BsGithub, BsArrowUpRightSquare } from 'react-icons/bs';
+import { Lato } from 'next/font/google';
 
-const lato = Lato({ 
+const lato = Lato({
   weight: '400',
-  subsets: ["latin"]
+  subsets: ['latin'],
 });
 
 const projects = [
   {
-    name: "Projeto 01",
+    name: 'W.Task - Gerenciador de Tarefas',
     description:
-      "Descrição do projeto.",
-    image: "/web.png",
-    github: "#",
-    link: "#",
+      'Uma solução prática para organizar suas tarefas diárias. Aplicação Fullstack utilizando as tecnologias: React, Next.js, Tailwind, Headless UI, React DnD, Typescript, Zusland, Appwrite.',
+    image: '/w-task.png',
+    github: 'https://github.com/WeslleyMouraDev/w-task',
+    link: '#',
   },
   {
-    name: "Projeto 02",
-    description: "Descrição do projeto.",
-    image: "/web.png",
-    github: "#",
-    link: "#",
+    name: 'Projeto 02',
+    description: 'Descrição do projeto.',
+    image: '/web.png',
+    github: '#',
+    link: '#',
   },
   {
-    name: "Projeto 03",
-    description:
-    "Descrição do projeto.",
-    image: "/web.png",
-    github: "#",
-    link: "#",
+    name: 'Projeto 03',
+    description: 'Descrição do projeto.',
+    image: '/web.png',
+    github: '#',
+    link: '#',
   },
-]
+];
 
 const ProjectsSection = () => {
   return (
@@ -84,12 +83,11 @@ const ProjectsSection = () => {
                 </div>
               </SlideUp>
             </div>
-          )
+          );
         })}
-        
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;
