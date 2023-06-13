@@ -67,9 +67,9 @@ const AboutSection = () => {
             <br />
             <p>
               Estou finalizando minha formação Fullstack na Trybe, área que
-              desde criança sempre fui (e sou) completamente apaixonado. Focado
-              em sempre aprender algo novo, o que me faz amar cada dia mais essa
-              área!
+              desde criança sempre fui (e sou) completamente apaixonado. Poder
+              sempre aprender algo novo é o que aumenta meu amor por essa área a
+              cada dia!
             </p>
             <br />
             <p>
