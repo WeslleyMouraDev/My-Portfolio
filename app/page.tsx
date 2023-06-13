@@ -1,8 +1,10 @@
-import AboutSection from "@/components/AboutSection"
-import HeroSection from "@/components/HeroSection"
-import ProjectsSection from "@/components/ProjectsSection"
-import Head from "./head";
-import Background from "@/components/Background";
+'use client';
+import AboutSection from '@/components/AboutSection';
+import HeroSection from '@/components/HeroSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import Head from './head';
+import Background from '@/components/Background';
+import MyDialog from '@/components/Modal';
 
 export default function Home() {
   return (
@@ -10,8 +12,9 @@ export default function Home() {
       <Head />
       <Background />
       <HeroSection />
+      {/* <MyDialog /> */}
       <AboutSection />
       <ProjectsSection />
     </main>
-  )
+  );
 }

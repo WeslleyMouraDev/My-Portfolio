@@ -1,22 +1,26 @@
-"use client"; // this is a client component
-import React, { useState } from "react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
-import { Link } from "react-scroll/modules";
-import { HiArrowDown } from "react-icons/hi";
-import { BsFiletypePdf, BsArrowDownRight } from "react-icons/bs";
-import { AiFillCheckCircle, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { Lato } from "next/font/google";
+'use client'; // this is a client component
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
+import { Link } from 'react-scroll/modules';
+import { HiArrowDown } from 'react-icons/hi';
+import { BsFiletypePdf, BsArrowDownRight } from 'react-icons/bs';
+import {
+  AiFillCheckCircle,
+  AiFillGithub,
+  AiFillLinkedin,
+} from 'react-icons/ai';
+import { Lato } from 'next/font/google';
 
 const lato = Lato({
-  weight: "400",
-  subsets: ["latin"],
+  weight: '400',
+  subsets: ['latin'],
 });
 
 const HeroSection = () => {
   const { theme: currentTheme } = useTheme();
   const [mostrarPopup, setMostrarPopup] = useState(false);
-  const isDarkTheme = currentTheme === "dark";
+  const isDarkTheme = currentTheme === 'dark';
 
   const handleDownload = () => {
     setMostrarPopup(true);
@@ -44,9 +48,9 @@ const HeroSection = () => {
             Olá, eu sou Weslley!
           </h1>
           <p className="text-lg mt-4 mb-6 md:text-2xl">
-            Sou um{" "}
+            Sou um{' '}
             <span className="font-bold text-[#12A0A8]">
-              Desenvolvedor Fullstack{" "}
+              Desenvolvedor Fullstack{' '}
             </span>
             apaixonado por transformar ideias em realidade através de tecnologia
             e inovação.
@@ -70,23 +74,22 @@ const HeroSection = () => {
                 <div className="fixed inset-0 flex items-center justify-center z-10">
                   <div className="flex items-center bg-white backdrop-blur-lg bg-opacity-80 rounded-lg p-4 shadow">
                     <p className="pr-2">Download do currículo iniciado!</p>
-                    <AiFillCheckCircle 
-                    className="text-green-500 w-5 h-5"
-                    />
+                    <AiFillCheckCircle className="text-green-500 w-5 h-5" />
                   </div>
                 </div>
               )}
               <a
-                href="https://github.com/WeslleyMouraDev/My-Portfolio/raw/main/public/resume/Weslley%20Moura%20-%20Curriculo%20Developer.pdf"
+                // href="https://github.com/WeslleyMouraDev/My-Portfolio/raw/main/public/resume/Weslley%20Moura%20-%20Curriculo%20Developer.pdf"
+                href="#"
                 onClick={handleDownload}
                 className={`flex items-center hover:bg-gray-300 ${
-                  isDarkTheme ? "text-white" : "text-gray-800"
+                  isDarkTheme ? 'text-white' : 'text-gray-800'
                 } hover:text-gray-900 py-2 px-4 rounded border border-gray-300 shadow`}
               >
                 <span className="mr-2">Currículo</span>
                 <BsFiletypePdf
                   className={`${
-                    isDarkTheme ? "text-white" : "text-neutral-500"
+                    isDarkTheme ? 'text-white' : 'text-neutral-500'
                   }`}
                 />
               </a>
@@ -98,7 +101,7 @@ const HeroSection = () => {
             >
               <AiFillGithub
                 className={`hover:-translate-y-1 transition-transform cursor-pointer ${
-                  isDarkTheme ? "text-white" : "text-neutral-500"
+                  isDarkTheme ? 'text-white' : 'text-neutral-500'
                 }`}
                 size={30}
               />
@@ -111,7 +114,7 @@ const HeroSection = () => {
             >
               <AiFillLinkedin
                 className={`hover:-translate-y-1 transition-transform cursor-pointer ${
-                  isDarkTheme ? "text-white" : "text-neutral-500"
+                  isDarkTheme ? 'text-white' : 'text-neutral-500'
                 }`}
                 size={30}
               />
