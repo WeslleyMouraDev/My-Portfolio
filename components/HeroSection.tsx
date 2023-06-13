@@ -79,7 +79,7 @@ const HeroSection = () => {
                 </div>
               )}
               <a
-                href="https://github.com/WeslleyMouraDev/My-Portfolio/raw/main/public/resume/Weslley%20Moura%20-%20Curriculo%20Dev.pdf"
+                href="https://github.com/WeslleyMouraDev/My-Portfolio/raw/main/public/resume/Weslley%20Moura%20-%20Curriculo%20Developer.pdf"
                 onClick={handleDownload}
                 className={`flex items-center hover:bg-gray-300 ${
                   isDarkTheme ? 'text-white' : 'text-gray-800'
