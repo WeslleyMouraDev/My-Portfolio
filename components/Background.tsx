@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const Background = () => {
   return (
     <div
-        className="
+      className="
         absolute
           top-0
           left-0
@@ -18,8 +18,8 @@ const Background = () => {
           opacity-50
           -z-50
         "
-      />
-  )
-}
+    />
+  );
+};
 
-export default Background
+export default Background;
