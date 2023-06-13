@@ -4,6 +4,7 @@ import Link from 'next/link';
 import SlideUp from './SlideUp';
 import { BsGithub, BsArrowUpRightSquare } from 'react-icons/bs';
 import { Lato } from 'next/font/google';
+import { useTheme } from 'next-themes';
 
 const lato = Lato({
   weight: '400',
@@ -36,6 +37,9 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const { theme: currentTheme } = useTheme();
+  const isDarkTheme = currentTheme === 'dark';
+
   return (
     <section id="projects" style={lato.style}>
       <h1 className="my-10 text-center font-bold text-4xl">
@@ -62,7 +66,11 @@ const ProjectsSection = () => {
                   </div>
                   <div className="mt-8 md:w-1/2">
                     <h1 className="text-4xl font-bold mb-6">{project.name}</h1>
-                    <p className="text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-200">
+                    <p
+                      className={`text-xl leading-7 mb-4 ${
+                        isDarkTheme ? 'text-neutral-200' : 'text-neutral-600'
+                      } `}
+                    >
                       {project.description}
                     </p>
                     <div className="flex flex-row align-bottom space-x-4">
