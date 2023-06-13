@@ -62,7 +62,7 @@ const AboutSection = () => {
               <span className="font-bold">{'altamente ambicioso'}</span>,
               <span className="font-bold">{' motivado'}</span>, e
               <span className="font-bold">{' determinado'}</span>. Atualmente
-              resido em Paulista - Pernambuco.
+              resido em Paulista, Pernambuco.
             </p>
             <br />
             <p>
