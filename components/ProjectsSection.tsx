@@ -1,40 +1,39 @@
-import React from "react"
-import Image from "next/image"
-import Link from "next/link"
-import SlideUp from "./SlideUp"
-import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
-import { Lato } from "next/font/google"
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import SlideUp from './SlideUp';
+import { BsGithub, BsArrowUpRightSquare } from 'react-icons/bs';
+import { Lato } from 'next/font/google';
 
-const lato = Lato({ 
+const lato = Lato({
   weight: '400',
-  subsets: ["latin"]
+  subsets: ['latin'],
 });
 
 const projects = [
   {
-    name: "Projeto 01",
+    name: 'W.Task - Gerenciador de Tarefas',
     description:
-      "Descrição do projeto.",
-    image: "/web.png",
-    github: "#",
-    link: "#",
+      'Uma solução prática para organizar suas tarefas diárias. Aplicação Fullstack utilizando as tecnologias: React, Next.js, Tailwind, Headless UI, React DnD, Typescript, Zusland, Appwrite.',
+    image: '/w-task.png',
+    github: 'https://github.com/WeslleyMouraDev/w-task',
+    link: 'https://wtask.vercel.app',
   },
-  {
-    name: "Projeto 02",
-    description: "Descrição do projeto.",
-    image: "/web.png",
-    github: "#",
-    link: "#",
-  },
-  {
-    name: "Projeto 03",
-    description:
-    "Descrição do projeto.",
-    image: "/web.png",
-    github: "#",
-    link: "#",
-  },
-]
+  // {
+  //   name: 'Projeto 02',
+  //   description: 'Descrição do projeto.',
+  //   image: '/web.png',
+  //   github: '#',
+  //   link: '#',
+  // },
+  // {
+  //   name: 'Projeto 03',
+  //   description: 'Descrição do projeto.',
+  //   image: '/web.png',
+  //   github: '#',
+  //   link: '#',
+  // },
+];
 
 const ProjectsSection = () => {
   return (
@@ -51,10 +50,10 @@ const ProjectsSection = () => {
               <SlideUp offset="-300px 0px -300px 0px">
                 <div className="flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
                   <div className=" md:w-1/2">
-                    <Link href={project.link}>
+                    <Link href={project.link} target="_blank">
                       <Image
                         src={project.image}
-                        alt=""
+                        alt="project-image"
                         width={1000}
                         height={1000}
                         className="rounded-xl shadow-xl hover:opacity-70"
@@ -84,12 +83,11 @@ const ProjectsSection = () => {
                 </div>
               </SlideUp>
             </div>
-          )
+          );
         })}
-        
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;

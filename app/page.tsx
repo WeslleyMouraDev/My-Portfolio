@@ -1,8 +1,9 @@
-import AboutSection from "@/components/AboutSection"
-import HeroSection from "@/components/HeroSection"
-import ProjectsSection from "@/components/ProjectsSection"
-import Head from "./head";
-import Background from "@/components/Background";
+'use client';
+import AboutSection from '@/components/AboutSection';
+import HeroSection from '@/components/HeroSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import Head from './head';
+import Background from '@/components/Background';
 
 export default function Home() {
   return (
@@ -13,5 +14,5 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
     </main>
-  )
+  );
 }
