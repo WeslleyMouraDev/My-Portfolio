@@ -7,11 +7,6 @@ import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Weslley Moura - Fullstack Developer',
-  description: 'Fullstack Developer',
-};
-
 export default function RootLayout({
   children,
 }: {

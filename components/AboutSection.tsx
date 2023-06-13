@@ -1,35 +1,48 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
-import { SiNextdotjs, SiTailwindcss, SiGithub, SiGit, SiNodedotjs, SiReact, SiDocker, SiPython, SiTypescript, SiJavascript, SiCss3, SiHtml5 } from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
-import { Lato } from "next/font/google"
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiGithub,
+  SiGit,
+  SiNodedotjs,
+  SiReact,
+  SiDocker,
+  SiPython,
+  SiTypescript,
+  SiJavascript,
+  SiCss3,
+  SiHtml5,
+} from 'react-icons/si';
+import { GrMysql } from 'react-icons/gr';
+import { Lato } from 'next/font/google';
 
-const lato = Lato({ 
+const lato = Lato({
   weight: '400',
-  subsets: ["latin"]
+  subsets: ['latin'],
 });
 
 const skills = [
-  { skill: "HTML", icon: SiHtml5 },
-  { skill: "CSS", icon: SiCss3 },
-  { skill: "JavaScript", icon: SiJavascript },
-  { skill: "TypeScript", icon: SiTypescript },
-  { skill: "Python", icon: SiPython },
-  { skill: "Docker", icon: SiDocker },
-  { skill: "Node.js", icon: SiNodedotjs },
-  { skill: "React", icon: SiReact },
-  { skill: "Next.js", icon: SiNextdotjs },
-  { skill: "Tailwind CSS", icon: SiTailwindcss },
-  { skill: "Git", icon: SiGit },
-  { skill: "GitHub", icon: SiGithub },
-  { skill: "MySQL", icon: GrMysql },
+  { skill: 'Node.js', icon: SiNodedotjs },
+  { skill: 'Python', icon: SiPython },
+  { skill: 'Docker', icon: SiDocker },
+  { skill: 'MySQL', icon: GrMysql },
+  { skill: 'TypeScript', icon: SiTypescript },
+  { skill: 'JavaScript', icon: SiJavascript },
+  { skill: 'React', icon: SiReact },
+  { skill: 'Next.js', icon: SiNextdotjs },
+  { skill: 'Tailwind CSS', icon: SiTailwindcss },
+  { skill: 'HTML', icon: SiHtml5 },
+  { skill: 'CSS', icon: SiCss3 },
+  { skill: 'Git', icon: SiGit },
+  { skill: 'GitHub', icon: SiGithub },
 ];
 
 const AboutSection = () => {
   const { theme: currentTheme } = useTheme();
-  const isDarkTheme = currentTheme === "dark";
+  const isDarkTheme = currentTheme === 'dark';
 
   return (
     <section id="about" style={lato.style}>
@@ -45,10 +58,10 @@ const AboutSection = () => {
               Aprenda sobre mim!
             </h1>
             <p>
-              Olá, meu nome é Weslley Moura e eu sou um Desenvolvedor Fullstack{" "}
-              <span className="font-bold">{"altamente ambicioso"}</span>,
-              <span className="font-bold">{" motivado"}</span>, e
-              <span className="font-bold">{" determinado"}</span>. Atualmente
+              Olá, meu nome é Weslley Moura e eu sou um Desenvolvedor Fullstack{' '}
+              <span className="font-bold">{'altamente ambicioso'}</span>,
+              <span className="font-bold">{' motivado'}</span>, e
+              <span className="font-bold">{' determinado'}</span>. Atualmente
               resido em Paulista - Pernambuco.
             </p>
             <br />
@@ -66,10 +79,10 @@ const AboutSection = () => {
             </p>
             <br />
             <p>
-              Eu acredito fortemente que{" "}
+              Eu acredito fortemente que{' '}
               <span className="font-bold text-teal-500">
                 nunca se deve parar de crescer
-              </span>{" "}
+              </span>{' '}
               e é isso que eu me esforço para fazer. Tenho uma paixão diferente
               pela tecnologia e estou sempre quebrando meus limites para
               acompanhar cada passo desse mercado. Fico muito entusiasmado para
@@ -94,7 +107,7 @@ const AboutSection = () => {
               })}
             </div>
             <Image
-              src={isDarkTheme ? "/skills-dark.svg" : "/skills-light.svg"}
+              src={isDarkTheme ? '/skills-dark.svg' : '/skills-light.svg'}
               alt=""
               width={200}
               height={200}
