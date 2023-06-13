@@ -1,16 +1,17 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-scroll/modules";
-import { useTheme } from "next-themes";
-import { BsMoonStarsFill, BsSun } from "react-icons/bs";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
-import Image from "next/image";
-import navLogo from "../public/navLogo.svg";
-import { Lato } from "next/font/google"
+'use client';
+import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-scroll/modules';
+import { useTheme } from 'next-themes';
+import { BsMoonStarsFill, BsSun } from 'react-icons/bs';
+import { IoMdMenu, IoMdClose } from 'react-icons/io';
+import Image from 'next/image';
+import navLogo from '../public/navLogo.svg';
+import { Lato } from 'next/font/google';
 
-const lato = Lato({ 
+const lato = Lato({
   weight: '400',
-  subsets: ["latin"]
+  subsets: ['latin'],
 });
 
 interface NavItem {
@@ -20,16 +21,16 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inicio",
-    page: "home",
+    label: 'Inicio',
+    page: 'home',
   },
   {
-    label: "Sobre",
-    page: "about",
+    label: 'Sobre',
+    page: 'about',
   },
   {
-    label: "Projetos",
-    page: "projects",
+    label: 'Projetos',
+    page: 'projects',
   },
 ];
 
@@ -37,14 +38,15 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [navbar, setNavbar] = useState(false);
 
-  const currentTheme = theme || "light";
+  const currentTheme = theme || 'light';
 
   return (
-    <header style={lato.style}
+    <header
+      style={lato.style}
       className={`w-full rounded-md mx-auto px-4 sm:px-20 fixed top-0 z-50 shadow bg-white backdrop-blur-lg bg-opacity-30 ${
-        currentTheme === "dark"
-          ? "dark:bg-stone-900 dark:backdrop-blur-lg dark:bg-opacity-30 dark:border-b dark:border-stone-600"
-          : ""
+        currentTheme === 'dark'
+          ? 'dark:bg-stone-900 dark:backdrop-blur-lg dark:bg-opacity-30 dark:border-b dark:border-stone-600'
+          : ''
       }`}
     >
       <div className="justify-between md:items-center md:flex bg">
@@ -66,7 +68,7 @@ const Navbar = () => {
         <div>
           <div
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
+              navbar ? 'block' : 'hidden'
             }`}
           >
             <div className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
@@ -76,9 +78,9 @@ const Navbar = () => {
                     key={idx}
                     to={item.page}
                     className={`block lg:inline-block ${
-                      currentTheme === "dark"
-                        ? "text-white"
-                        : "text-neutral-900"
+                      currentTheme === 'dark'
+                        ? 'text-white'
+                        : 'text-neutral-900'
                     } hover:text-neutral-500 cursor-pointer`}
                     activeClass="active"
                     spy={true}
@@ -92,16 +94,16 @@ const Navbar = () => {
                 );
               })}
 
-              {currentTheme === "dark" ? (
+              {currentTheme === 'dark' ? (
                 <button
-                  onClick={() => setTheme("light")}
+                  onClick={() => setTheme('light')}
                   className="bg-slate-100 p-2 rounded-xl md:items-center"
                 >
                   <BsSun size={25} color="black" />
                 </button>
               ) : (
                 <button
-                  onClick={() => setTheme("dark")}
+                  onClick={() => setTheme('dark')}
                   className="bg-slate-100 p-2 rounded-xl md:items-center"
                 >
                   <BsMoonStarsFill />
