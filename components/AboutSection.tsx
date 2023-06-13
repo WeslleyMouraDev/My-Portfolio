@@ -16,6 +16,7 @@ import {
   SiCss3,
   SiHtml5,
 } from 'react-icons/si';
+import { AiFillApi } from 'react-icons/ai';
 import { GrMysql } from 'react-icons/gr';
 import { Lato } from 'next/font/google';
 
@@ -26,6 +27,7 @@ const lato = Lato({
 
 const skills = [
   { skill: 'Node.js', icon: SiNodedotjs },
+  { skill: 'API', icon: AiFillApi },
   { skill: 'Python', icon: SiPython },
   { skill: 'Docker', icon: SiDocker },
   { skill: 'MySQL', icon: GrMysql },
