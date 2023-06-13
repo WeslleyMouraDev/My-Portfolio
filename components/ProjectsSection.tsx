@@ -65,7 +65,11 @@ const ProjectsSection = () => {
                     </Link>
                   </div>
                   <div className="mt-8 md:w-1/2">
-                    <h1 className="text-4xl font-bold mb-6">{project.name}</h1>
+                    <Link href={project.link} target="_blank">
+                      <h1 className="text-4xl font-bold mb-6">
+                        {project.name}
+                      </h1>
+                    </Link>
                     <p
                       className={`text-xl leading-7 mb-4 ${
                         isDarkTheme ? 'text-neutral-200' : 'text-neutral-600'

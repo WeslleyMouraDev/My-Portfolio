@@ -25,10 +25,13 @@ const HeroSection = () => {
   const handleDownload = () => {
     setMostrarPopup(true);
 
-    // Define um timeout para esconder o pop-up depois de 3 segundos
-    setTimeout(() => {
-      setMostrarPopup(false);
-    }, 3000);
+    // // Define um timeout para esconder o pop-up depois de 3 segundos
+    // setTimeout(() => {
+    //   setMostrarPopup(false);
+    // }, 3000);
+  };
+  const handleClosePopup = () => {
+    setMostrarPopup(false);
   };
 
   return (
@@ -68,18 +71,31 @@ const HeroSection = () => {
               <span className="mr-2">Projetos</span>
               <BsArrowDownRight />
             </Link>
-
             <div>
               {mostrarPopup && (
                 <div className="fixed inset-0 flex items-center justify-center z-10">
-                  <div className="flex items-center bg-white backdrop-blur-lg bg-opacity-80 rounded-lg p-4 shadow">
-                    <p className="pr-2">Download do currículo iniciado!</p>
-                    <AiFillCheckCircle className="text-green-500 w-5 h-5" />
+                  <div className="fixed inset-0 opacity-50 bg-black"></div>
+                  <div className=" flex flex-col items-center bg-white backdrop-blur-lg rounded-lg p-4 shadow-2xl animate-fadeIn">
+                    <div className="flex items-center pt-2">
+                      <AiFillCheckCircle className="text-green-500 w-5 h-5" />
+                      <p className="pl-1 text-gray-800 font-bold">
+                        Download do currículo iniciado!
+                      </p>
+                    </div>
+                    <div>
+                      <button
+                        onClick={handleClosePopup}
+                        className="flex items-center mt-4 py-1 px-4 rounded border font-medium border-[#56E1E8] shadow-md text-[#096E73] bg-[#73E8EE] hover:bg-[#18B9C1] hover:text-white"
+                      >
+                        Entendi!
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}
               <a
                 href="https://github.com/WeslleyMouraDev/My-Portfolio/raw/main/public/resume/Weslley%20Moura%20-%20Curriculo%20Developer.pdf"
+                // href="#"
                 onClick={handleDownload}
                 className={`flex items-center hover:bg-gray-300 ${
                   isDarkTheme ? 'text-white' : 'text-gray-800'
